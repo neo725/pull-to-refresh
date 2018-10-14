@@ -79,6 +79,10 @@
         if (container.style.transform) {
           container.style.transition = 'transform 0.3s';
           container.style.transform = 'translate3d(0, 0, 0)';
+
+          var parentElm = container.parentElement;
+          parentElm.style.transform = 'transform: translate3d(0px, 0px, 0px) scale(1);';
+
           container.addEventListener('transitionend', function () {
             container.style.transition = '';
             resolve();
