@@ -14,9 +14,12 @@ const animates = {
     elControl.style.transform = `translate3d(-50%, 0, 0) rotate(${360 * p}deg)`
   },
 
-  refreshing({ container, threshold }) {
+  refreshing({ container, threshold, fixTopWhenRefreshing }) {
+    let container_top = fixTopWhenRefreshing ? fixTopWhenRefreshing : threshold / 2.5
+    
     container.style.transition = 'transform 0.2s'
-    container.style.transform = `translate3d(0, ${threshold / 2.5}px, 0)`
+    //container.style.transform = `translate3d(0, ${threshold / 2.5}px, 0)`
+    container.style.transform = `translate3d(0, ${container_top}px, 0)`
   },
 
   restoring({ container }) {

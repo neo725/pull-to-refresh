@@ -23,10 +23,14 @@
     },
     refreshing: function refreshing(_ref) {
       var container = _ref.container,
-          threshold = _ref.threshold;
+          threshold = _ref.threshold,
+          fixTopWhenRefreshing = _ref.fixTopWhenRefreshing;
+
+      var container_top = fixTopWhenRefreshing ? fixTopWhenRefreshing : threshold / 2.5;
 
       container.style.transition = 'transform 0.2s';
-      container.style.transform = 'translate3d(0, ' + threshold / 2.5 + 'px, 0)';
+      //container.style.transform = `translate3d(0, ${threshold / 2.5}px, 0)`
+      container.style.transform = 'translate3d(0, ' + container_top + 'px, 0)';
     },
     restoring: function restoring(_ref2) {
       var container = _ref2.container;
