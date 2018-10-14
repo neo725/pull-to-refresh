@@ -51,7 +51,8 @@ export default function(opts) {
 
       if (d >= threshold && state !== 'reached' || d < threshold && state !== 'pulling') {
         removeClass(state)
-        state = state === 'reached' ? 'pulling' : 'reached'
+        //state = state === 'reached' || state === 'refreshing' ? 'pulling' : 'reached'
+        state = ['reached', 'refreshing'].includes(state) ? 'pulling' : 'reached'
         addClass(state)
         onStateChange(state, opts)
       }
