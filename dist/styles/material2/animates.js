@@ -47,7 +47,7 @@
       var tipMiddle = this.calculateTipPosition(container, elControl, tipControl);
       var elMiddle = this.calculateElPosition(container, elControl, tipControl);
 
-      elControl.style.transform = 'translate3d(' + elMiddle + ', 0, 0) rotate(' + 360 * p + 'deg)';
+      elControl.style.transform = 'translate3d(' + elMiddle + 'px, 0, 0) rotate(' + 360 * p + 'deg)';
       tipControl.style.transform = 'translate3d(' + tipMiddle + 'px, 0, 0)';
     },
     refreshing: function refreshing(_ref) {
@@ -69,7 +69,7 @@
       var tipMiddle = this.calculateTipPosition(container, elControl, tipControl);
       var elMiddle = this.calculateElPosition(container, elControl, tipControl);
 
-      elControl.style.transform = 'translate3d(' + elMiddle + ', 0, 0) rotate(' + 360 + 'deg)';
+      elControl.style.transform = 'translate3d(' + elMiddle + 'px, 0, 0) rotate(' + 360 + 'deg)';
       tipControl.style.transform = 'translate3d(' + tipMiddle + 'px, 0, 0)';
     },
     restoring: function restoring(_ref2) {
