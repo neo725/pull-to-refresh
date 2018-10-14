@@ -57,7 +57,7 @@ const animates = {
     let tipMiddle = this.calculateTipPosition(container, elControl, tipControl)
     let elMiddle = this.calculateElPosition(container, elControl, tipControl)
 
-    elControl.style.transform = `translate3d(${elMiddle}, 0, 0) rotate(${360 * p}deg)`
+    elControl.style.transform = `translate3d(${elMiddle}, 0, 0) rotate(${360}deg)`
     tipControl.style.transform = `translate3d(${tipMiddle}px, 0, 0)`
   },
 
