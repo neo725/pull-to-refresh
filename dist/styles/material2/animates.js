@@ -52,8 +52,13 @@
     },
     refreshing: function refreshing(_ref) {
       var container = _ref.container,
+          elControl = _ref.elControl,
+          tipControl = _ref.tipControl,
           threshold = _ref.threshold,
           fixTopWhenRefreshing = _ref.fixTopWhenRefreshing;
+
+      if (!elControl) elControl = container.querySelector('.pull-to-refresh-material2__control');
+      if (!tipControl) tipControl = container.querySelector('.ptr__tip-container');
 
       var container_top = fixTopWhenRefreshing ? fixTopWhenRefreshing : threshold / 2.5;
 

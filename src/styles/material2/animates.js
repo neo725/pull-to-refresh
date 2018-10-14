@@ -44,7 +44,10 @@ const animates = {
     tipControl.style.transform = `translate3d(${tipMiddle}px, 0, 0)`
   },
 
-  refreshing({ container, threshold, fixTopWhenRefreshing }) {
+  refreshing({ container, elControl, tipControl, threshold, fixTopWhenRefreshing }) {
+    if (!elControl) elControl = container.querySelector('.pull-to-refresh-material2__control')
+    if (!tipControl) tipControl = container.querySelector('.ptr__tip-container')
+
     let container_top = fixTopWhenRefreshing ? fixTopWhenRefreshing : threshold / 2.5
     
     container.style.transition = 'transform 0.2s'
