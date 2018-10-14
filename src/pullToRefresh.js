@@ -91,6 +91,8 @@ export default function(opts) {
             onStateChange(state)
           })
         })
+      } else if (state === 'refreshing') {
+        animates.refreshing(opts)
       }
     }
   })
