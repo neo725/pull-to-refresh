@@ -73,6 +73,7 @@
         threshold = _opts.threshold,
         refresh = _opts.refresh,
         restore = _opts.restore,
+        pulling = _opts.pulling,
         onStateChange = _opts.onStateChange,
         animates = _opts.animates;
 
@@ -127,9 +128,9 @@
         }
 
         animates.pulling(d, opts);
-        // if (pulling) {
-        //   pulling(state)
-        // }
+        if (pulling) {
+          pulling(state, distance);
+        }
       },
       onpanend: function onpanend() {
         if (state == null) return;
