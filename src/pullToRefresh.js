@@ -8,7 +8,7 @@ export default function(opts) {
     onStateChange() { /* noop */ }
   }, opts)
 
-  const { container, scrollable, threshold, refresh, onStateChange, animates } = opts
+  const { container, scrollable, threshold, pulling, refresh, onStateChange, animates } = opts
 
   let distance, offset, state // state: pulling, aborting, reached, refreshing, restoring
 
@@ -58,6 +58,9 @@ export default function(opts) {
       }
 
       animates.pulling(d, opts)
+      if (pulling) {
+        pulling(state)
+      }
     },
 
     onpanend() {

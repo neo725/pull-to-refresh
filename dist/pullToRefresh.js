@@ -71,6 +71,7 @@
         container = _opts.container,
         scrollable = _opts.scrollable,
         threshold = _opts.threshold,
+        pulling = _opts.pulling,
         refresh = _opts.refresh,
         onStateChange = _opts.onStateChange,
         animates = _opts.animates;
@@ -126,6 +127,9 @@
         }
 
         animates.pulling(d, opts);
+        if (pulling) {
+          pulling(state);
+        }
       },
       onpanend: function onpanend() {
         if (state == null) return;
