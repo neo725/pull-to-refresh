@@ -8,7 +8,7 @@ export default function(opts) {
     onStateChange() { /* noop */ }
   }, opts)
 
-  const { container, scrollable, threshold, pulling, refresh, onStateChange, animates } = opts
+  const { container, scrollable, threshold, refresh, restore, onStateChange, animates } = opts
 
   let distance, offset, state // state: pulling, aborting, reached, refreshing, restoring
 
@@ -72,6 +72,9 @@ export default function(opts) {
         onStateChange(state)
         addClass(state)
         animates.aborting(opts).then(() => {
+          if (restore) {
+            restore()
+          }
           removeClass(state)
           distance = state = offset = null
           onStateChange(state)

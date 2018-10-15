@@ -71,8 +71,8 @@
         container = _opts.container,
         scrollable = _opts.scrollable,
         threshold = _opts.threshold,
-        pulling = _opts.pulling,
         refresh = _opts.refresh,
+        restore = _opts.restore,
         onStateChange = _opts.onStateChange,
         animates = _opts.animates;
 
@@ -140,6 +140,9 @@
           onStateChange(state);
           addClass(state);
           animates.aborting(opts).then(function () {
+            if (restore) {
+              restore();
+            }
             removeClass(state);
             distance = state = offset = null;
             onStateChange(state);
