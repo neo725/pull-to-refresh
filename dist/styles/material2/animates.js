@@ -33,7 +33,8 @@
       var container = opts.container,
           threshold = opts.threshold,
           elControl = opts.elControl,
-          tipControl = opts.tipControl;
+          tipControl = opts.tipControl,
+          resetTopWhenPulling = opts.resetTopWhenPulling;
 
 
       var p = d / threshold;
@@ -49,6 +50,10 @@
 
       elControl.style.transform = 'translate3d(' + elMiddle + 'px, 0, 0) rotate(' + 360 * p + 'deg)';
       tipControl.style.transform = 'translate3d(' + tipMiddle + 'px, 0, 0)';
+
+      if (resetTopWhenPulling) {
+        resetTopWhenPulling.style.transform = 'translate3d(0px, 0px, 0px) scale(1);';
+      }
     },
     refreshing: function refreshing(_ref) {
       var container = _ref.container,

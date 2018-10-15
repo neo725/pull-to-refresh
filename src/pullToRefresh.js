@@ -58,9 +58,9 @@ export default function(opts) {
       }
 
       animates.pulling(d, opts)
-      if (pulling) {
-        pulling(state)
-      }
+      // if (pulling) {
+      //   pulling(state)
+      // }
     },
 
     onpanend() {

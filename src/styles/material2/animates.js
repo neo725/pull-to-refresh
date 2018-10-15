@@ -26,7 +26,7 @@ const animates = {
     if (!opts.elControl) opts.elControl = opts.container.querySelector('.pull-to-refresh-material2__control')
     if (!opts.tipControl) opts.tipControl = opts.container.querySelector('.ptr__tip-container')
 
-    const { container, threshold, elControl, tipControl } = opts
+    const { container, threshold, elControl, tipControl, resetTopWhenPulling } = opts
 
     let p = d / threshold
     if (p > 1) p = 1
@@ -42,6 +42,10 @@ const animates = {
 
     elControl.style.transform = `translate3d(${elMiddle}px, 0, 0) rotate(${360 * p}deg)`
     tipControl.style.transform = `translate3d(${tipMiddle}px, 0, 0)`
+
+    if (resetTopWhenPulling) {
+      resetTopWhenPulling.style.transform = 'translate3d(0px, 0px, 0px) scale(1);'
+    }
   },
 
   refreshing({ container, elControl, tipControl, threshold, fixTopWhenRefreshing }) {
